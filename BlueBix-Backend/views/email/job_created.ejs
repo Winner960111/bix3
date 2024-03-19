@@ -1,0 +1,248 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Opening Created</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #fff;
+        }
+
+        table {
+            border-spacing: 0;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        tr {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #fff;
+        }
+
+        .main {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border-spacing: 0;
+            font-family: "Noto Sans", Arial, sans-serif;
+        }
+
+        h5 {
+            text-align: left;
+            color: rgba(0, 0, 0, 0.85);
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 0.75px;
+            padding: 5px 50px;
+        }
+
+        .opening-details {
+            background-color: #053f69;
+            color: #fff;
+        }
+
+        span {
+            text-align: left;
+            color: #000;
+        }
+
+        .headings {
+            padding: 15px 25px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .opening-details h5 {
+            color: #fff;
+        }
+
+        .opening-details span {
+            color: #fff;
+        }
+
+        .opening-details .headings {
+            color: #fff;
+        }
+
+        .border-white {
+            border: #fff 1px solid;
+        }
+
+        .border-dark {
+            border: #e5e7eb 1px solid;
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        span a {
+            color: #fff !important;
+        }
+
+        .logo {
+            width: 174px;
+            height: 58px;
+            display: block;
+            max-width: 174px;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            line-height: 24px;
+            color: #f33;
+            font-weight: bold;
+        }
+
+        .greet {
+            font-family: 'Noto Sans', Arial, sans-serif;
+            font-size: 18px;
+            line-height: 24px;
+            color: #444444;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <center class="wrapper">
+        <table class="main" width="100%">
+            <tr>
+                <td>
+                    <table width="100%">
+                        <tr>
+                            <td height="12" style="background-color: #053f69"></td>
+                        </tr>
+
+                        <tr>
+                            <td align="center">
+                                <a style="text-decoration: none"><img class="logo" alt="Bluebix"
+                                        src="<%= process.env.RESOURCE_URL %>upload/images/main-logo.png" /></a>
+                        </tr>
+
+                        <tr class="greet">
+                            <td>Hello <%= mail_data.name %>,</td>
+                        </tr>
+
+                        <tr class="greet">
+                            <td>Job opening <b>
+                                    <%= mail_data.content.opening_title %>
+                                </b> with opening id
+                                <b>
+                                    <%= mail_data.content.opening_id %>
+                                </b>, has been posted on <b>
+                                    <%= mail_data.content.created_at %>
+                                </b>.
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="py-3"></td>
+                        </tr>
+
+                        <tr class="opening-details">
+                            <td class="headings border-white">Opening Details</td>
+                        </tr>
+
+                        <tr class="opening-details">
+                            <td>
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <h5>Title</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.opening_title%>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Required Skills</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.required_skills.map(skill=> skill.toUpperCase())%>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Required Experience</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.required_experience %> years
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Salary Range (<%= mail_data.content.salary_type %>)</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                $<%= mail_data.content.salary_range_from %> -
+                                                    <%= mail_data.content.salary_range_to %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Number Of Openings</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.number_of_openings %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="py-3"></td>
+            </tr>
+
+            <tr>
+                <td class="greet">
+                    <%- mail_data.footer_content %>
+                </td>
+            </tr>
+
+            <tr>
+                <td height="12" style="background-color: #053f69"></td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

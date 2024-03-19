@@ -1,0 +1,7 @@
+/node_modules
+/.env
+/package-lock.json
+/public/upload/candidate_documents/
+/public/upload/candidate/
+/public/upload/user/
+/flask/.env

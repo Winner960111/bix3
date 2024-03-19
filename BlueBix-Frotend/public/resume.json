@@ -1,0 +1,429 @@
+{
+  "certifications": [
+    "Programming Languages JavaScript HTML5 PHP OOP CSS",
+    "PHP Framework certificate Zend Codeigniter Symfony"
+  ],
+  "dateOfBirth": null,
+  "education": [
+    {
+      "organization": "Columbia University",
+      "accreditation": {
+        "education": "Bachelor of Science",
+        "educationLevel": "bachelors",
+        "inputStr": "Bachelor of Science: Computer Information Systems",
+        "matchStr": "Bachelor of Science"
+      },
+      "grade": null,
+      "location": {
+        "formatted": "New York, NY, USA",
+        "streetNumber": null,
+        "street": null,
+        "apartmentNumber": null,
+        "city": "New York",
+        "postalCode": null,
+        "state": "New York",
+        "country": "United States",
+        "rawInput": "NY"
+      },
+      "dates": {
+        "startDate": null,
+        "completionDate": "2014-01-01",
+        "isCurrent": false
+      }
+    }
+  ],
+  "emails": [
+    "christoper.m@gmail.com"
+  ],
+  "location": {
+    "formatted": "6PQ, 177 Great Portland St, London W1W 5PQ, UK",
+    "streetNumber": "177",
+    "street": "Great Portland Street",
+    "apartmentNumber": "6PQ",
+    "city": null,
+    "postalCode": "W1W 5PQ",
+    "state": "England",
+    "country": "United Kingdom",
+    "rawInput": "177 Great Portland Street, London W5W 6PQ"
+  },
+  "name": {
+    "raw": "Christopher Morgan",
+    "last": "Morgan",
+    "first": "Christopher",
+    "title": "",
+    "middle": ""
+  },
+  "objective": "",
+  "phoneNumbers": [
+    "+442076668555"
+  ],
+  "publications": [
+    
+  ],
+  "referees": [
+    
+  ],
+  "sections": [
+    {
+      "sectionType": "Summary",
+      "bbox": [
+        246.470003068447,
+        63.8519992828369,
+        549.772003173828,
+        179.505973145366
+      ],
+      "pageIndex": 0,
+      "text": "Summary \nSenior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including HTML5, PHP OOP, JavaScript, CSS, MySQL. Strong background in project management and customer relations."
+    },
+    {
+      "sectionType": "PersonalDetails",
+      "bbox": [
+        36.8819999992847,
+        65.5279998779297,
+        203.418014526367,
+        527.204017162323
+      ],
+      "pageIndex": 0,
+      "text": "Christopher \nMorgan \nContact \nAddress: 177 Great Portland Street, London W5W 6PQ \nPhone: \n+44 (0)20 7666 8555 \nEmail: \nchristoper.m@gmail.com \nLinkedIn: linkedin.com/christopher.morgan"
+    },
+    {
+      "sectionType": "Skills/Interests/Languages",
+      "bbox": [
+        246.610003054142,
+        207.761972427368,
+        525.33797454834,
+        290.275992676616
+      ],
+      "pageIndex": 0,
+      "text": "Skill Highlights \n Project management  Strong decision maker  Complex problem solver \n Creative design  Innovative  Service-focused"
+    },
+    {
+      "sectionType": "WorkExperience",
+      "bbox": [
+        246.302003055811,
+        317.473992347717,
+        556.406051635742,
+        535.084022045135
+      ],
+      "pageIndex": 0,
+      "text": "Experience \nWeb Developer - 09/2015 to 05/2019 Luna Web Design, New York \n Cooperate with designers to create clean interfaces and simple, intuitive interactions and experiences.  Develop project concepts and maintain optimal workflow.  Work with senior developer to manage large, complex design projects for corporate clients.  Complete detailed programming and development tasks for front end public and internal websites as well as challenging back-end server code.  Carry out quality assurance tests to discover errors and optimize usability."
+    },
+    {
+      "sectionType": "Skills/Interests/Languages",
+      "bbox": [
+        37.1700000166893,
+        552.37401676178,
+        135.23498916626,
+        730.604003429413
+      ],
+      "pageIndex": 0,
+      "text": "Languages \nSpanish – C2 Chinese – A1 German – A2 \nHobbies \n Writing  Sketching  Photography  Design"
+    },
+    {
+      "sectionType": "Education",
+      "bbox": [
+        246.518003046513,
+        560.253991127014,
+        536.331031799316,
+        613.472000598907
+      ],
+      "pageIndex": 0,
+      "text": "Education \nBachelor of Science: Computer Information Systems - 2014 Columbia University, NY"
+    },
+    {
+      "sectionType": "Training/Certifications",
+      "bbox": [
+        246.422003060579,
+        638.452005386353,
+        540.345977783203,
+        706.462006092072
+      ],
+      "pageIndex": 0,
+      "text": "Certifications \nPHP Framework (certificate): Zend, Codeigniter, Symfony. Programming Languages: JavaScript, HTML5, PHP OOP, CSS, SQL, MySQL."
+    }
+  ],
+  "skills": [
+    "Cascading Style Sheets (CSS)",
+    "Front End (Software Engineering)",
+    "German Language",
+    "HTML5",
+    "JavaScript (Programming Language)",
+    "Management",
+    "Mandarin Chinese",
+    "MySQL",
+    "Object-Oriented Programming (OOP)",
+    "PHP (Scripting Language)",
+    "Photography",
+    "Project Management",
+    "Quality Assurance",
+    "Sketching",
+    "Spanish Language",
+    "Usability",
+    "Web Design",
+    "Writing"
+  ],
+  "skillsDetails": [
+    {
+      "name": "Usability",
+      "lastUsed": "2019-05-01",
+      "numberOfMonths": 44,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "WorkExperience",
+          "position": 0
+        }
+      ]
+    },
+    {
+      "name": "Quality Assurance",
+      "lastUsed": "2019-05-01",
+      "numberOfMonths": 44,
+      "type": "soft_skill",
+      "sources": [
+        {
+          "section": "WorkExperience",
+          "position": 0
+        }
+      ]
+    },
+    {
+      "name": "Web Design",
+      "lastUsed": "2019-05-01",
+      "numberOfMonths": 44,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "WorkExperience",
+          "position": 0
+        }
+      ]
+    },
+    {
+      "name": "Cascading Style Sheets (CSS)",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "Summary",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "Front End (Software Engineering)",
+      "lastUsed": "2019-05-01",
+      "numberOfMonths": 44,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "WorkExperience",
+          "position": 0
+        },
+        {
+          "section": "Summary",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "PHP (Scripting Language)",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "Summary",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "Object-Oriented Programming (OOP)",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "Summary",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "HTML5",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "Summary",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "MySQL",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "Summary",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "JavaScript (Programming Language)",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "Summary",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "Project Management",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "Skills/Interests/Languages",
+          "position": null
+        },
+        {
+          "section": "Summary",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "Management",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "soft_skill",
+      "sources": [
+        {
+          "section": "Skills/Interests/Languages",
+          "position": null
+        },
+        {
+          "section": "Summary",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "Mandarin Chinese",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "soft_skill",
+      "sources": [
+        {
+          "section": "Skills/Interests/Languages",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "German Language",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "soft_skill",
+      "sources": [
+        {
+          "section": "Skills/Interests/Languages",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "Spanish Language",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "soft_skill",
+      "sources": [
+        {
+          "section": "Skills/Interests/Languages",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "Sketching",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "Skills/Interests/Languages",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "Photography",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "hard_skill",
+      "sources": [
+        {
+          "section": "Skills/Interests/Languages",
+          "position": null
+        }
+      ]
+    },
+    {
+      "name": "Writing",
+      "lastUsed": null,
+      "numberOfMonths": null,
+      "type": "soft_skill",
+      "sources": [
+        {
+          "section": "Skills/Interests/Languages",
+          "position": null
+        }
+      ]
+    }
+  ],
+  "languages": [
+    "German",
+    "Spanish"
+  ],
+  "summary": "Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including HTML5, PHP OOP, JavaScript, CSS, MySQL. Strong background in project management and customer relations.",
+  "websites": [
+    "linkedin.com/christopher.morgan"
+  ],
+  "totalYearsExperience": 4,
+  "workExperience": [
+    {
+      "jobTitle": "Web Developer",
+      "organization": "Luna Web Design,",
+      "location": {
+        "formatted": "New York, NY, USA",
+        "streetNumber": null,
+        "street": null,
+        "apartmentNumber": null,
+        "city": "New York",
+        "postalCode": null,
+        "state": "New York",
+        "country": "United States",
+        "rawInput": "New York"
+      },
+      "dates": {
+        "startDate": "2015-09-01",
+        "endDate": "2019-05-01",
+        "monthsInPosition": 44,
+        "isCurrent": false
+      },
+      "jobDescription": "Cooperate with designers to create clean interfaces and simple, intuitive interactions and experiences.\nDevelop project concepts and maintain optimal workflow.\nWork with senior developer to manage large, complex design projects for corporate clients.\nComplete detailed programming and development tasks for front end public and internal websites as well as challenging back-end server code.\nCarry out quality assurance tests to discover errors and optimize usability."
+    }
+  ],
+  "isResumeProbability": 99
+}

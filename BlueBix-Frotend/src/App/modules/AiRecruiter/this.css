@@ -1,0 +1,144 @@
+.AiRecruiter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.title_bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+.title {
+  padding: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+.main {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  padding: 20px;
+}
+.main_job {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+}
+.main_job_search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input {
+        width: 60%;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.button {
+        width: 160px;
+    height: 40px;
+    font-family: sans-serif;
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 5px
+}
+.button:active{
+    background-color: #65b3fd;
+}
+.main_job_display {
+    width: 100%;
+    height: 50vh;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.main_candidate {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.main_candidate_search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.can_input {
+      width: 60%;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.can_button {
+     width: 160px;
+    height: 40px;
+    font-family: sans-serif;
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 5px
+}
+.can_button:active{
+    background-color: #65b3fd;
+}
+.main_candidate_display {
+    width: 100%;
+    height: 50vh;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.start_button {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  padding:20px;
+      margin-top: 10px;
+}
+.select{
+     margin-left: 10px;
+    width: 100px;
+}
+.start_btn {
+   width: 160px;
+    height: 40px;
+    font-family: sans-serif;
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 30px;;
+}
+.start_btn:active{
+    background-color: #65b3fd;
+}
+.radio_button{
+    margin: 15px;
+}
+.radio1{
+    font-size: 10px;
+    margin: 0 10px;
+}
+.lab1{
+        display: flex;
+    font-size: 15px;
+}
+.lab2{
+        display: flex;
+    font-size: 15px;
+}
+.check1{
+    font-size: 10px;
+    margin: 0 10px;
+}

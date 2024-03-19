@@ -1,0 +1,493 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candidate Submission</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #fff;
+        }
+
+        table {
+            border-spacing: 0;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        tr {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #fff;
+        }
+
+        .main {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border-spacing: 0;
+            font-family: "Noto Sans", Arial, sans-serif;
+        }
+
+        h5 {
+            text-align: left;
+            color: rgba(0, 0, 0, 0.85);
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 0.75px;
+            padding: 5px 50px;
+        }
+
+        .candidate-details {
+            background-color: #053f69;
+            color: #fff;
+        }
+
+        span {
+            text-align: left;
+            color: #000;
+        }
+
+        .headings {
+            padding: 15px 25px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .candidate-details h5 {
+            color: #fff;
+        }
+
+        .candidate-details span {
+            color: #fff;
+        }
+
+        .candidate-details .headings {
+            color: #fff;
+        }
+
+        .border-white {
+            border: #fff 1px solid;
+        }
+
+        .border-dark {
+            border: #e5e7eb 1px solid;
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .download-btn {
+            background-color: #053f69;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+
+        span a {
+            color: #fff !important;
+        }
+
+        .logo {
+            width: 174px;
+            height: 58px;
+            display: block;
+            max-width: 174px;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            line-height: 24px;
+            color: #f33;
+            font-weight: bold;
+        }
+
+        .greet {
+            font-family: 'Noto Sans', Arial, sans-serif;
+            font-size: 18px;
+            line-height: 24px;
+            color: #444444;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <center class="wrapper">
+        <table class="main" width="100%">
+            <tr>
+                <td>
+                    <table width="100%">
+                        <tr>
+                            <td height="12" style="background-color: #053f69"></td>
+                        </tr>
+
+                        <tr>
+                            <td align="center">
+                                <a style="text-decoration: none"><img class="logo" alt="Bluebix"
+                                        src="<%= process.env.RESOURCE_URL %>upload/images/main-logo.png" /></a>
+                        </tr>
+
+                        <tr class="greet">
+                            <td>Hello <%= mail_data.name %>,</td>
+                        </tr>
+
+                        <tr class="greet">
+                            <td>Candidate
+                                <b>
+                                    <%= mail_data.content.first_name %>
+                                </b>
+                                <b>
+                                    <%= mail_data.content.last_name %>
+                                </b>
+                                is submitted by bdm
+                                <b>
+                                    <%= mail_data.content.bdm_name %>
+                                </b>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="py-3"></td>
+                        </tr>
+                        <!-- candidate submission -->
+                        <tr class="candidate-details">
+                            <td class="headings border-white">Candidate Details</td>
+                        </tr>
+                        <tr class="candidate-details">
+                            <td>
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <h5>Name</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.first_name%>
+                                                    <%= mail_data.content.last_name%>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Address</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.permanent_address%>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Mobile</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.mobile %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Work Experience</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.total_work_exp_year %> Year(s)
+                                                    <%= mail_data.content.total_work_exp_month %>
+                                                        Month(s)
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Email</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.email %>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h5>Salary</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= parseInt(mail_data.content.current_ctc)> 1000
+                                                    ? '$ ' + parseInt(mail_data.content.current_ctc) / 1000 + ' K'
+                                                    : '$ ' + mail_data.content.current_ctc %>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- candidate submission ends-->
+
+                        <tr>
+                            <td class="py-3"></td>
+                        </tr>
+
+                        <!-- job opening -->
+                        <tr class="border-dark">
+                            <td class="headings border-dark">Job Opening Details</td>
+                        </tr>
+                        <tr>
+                            <td class="border-dark">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <h5>Title</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.opening_title %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Description</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.short_description %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Salary</h5>
+                                        </td>
+                                        <td>
+                                            <span>$ <%= mail_data.content.salary_range_from %> - <%=
+                                                        mail_data.content.salary_range_to %>
+                                                        (<%= mail_data.content.salary_type %>)
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- job opening ends-->
+
+                        <tr>
+                            <td class="py-3"></td>
+                        </tr>
+
+                        <!-- personal details  -->
+                        <tr>
+                            <td class="headings border-dark">Personal Details</td>
+                        </tr>
+                        <tr>
+                            <td class="border-dark">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <h5>Date Of Birth</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= new Date(mail_data.content.date_of_birth).toDateString() %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Permanent Address</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.permanent_address %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Gender</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.gender %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Area Pin Code</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.area_pin_code %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Hometown</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.home_town %>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- personal details  ends-->
+
+                        <tr>
+                            <td class="py-3"></td>
+                        </tr>
+
+                        <!-- career  profile -->
+                        <tr>
+                            <td class="headings border-dark">Carrer Profile</td>
+                        </tr>
+                        <tr>
+                            <td class="border-dark">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <h5>Role</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.role %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Desired Job Type</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.desired_job_type %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Desired Employment Type</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.desired_employment_type %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Desired Shift</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.desired_shift %>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Desired Location</h5>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <%= mail_data.content.desired_location %>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- carrer profile ends-->
+
+
+
+                        <% if(mail_data.content.attachments){ %>
+                            <tr>
+                                <td class="py-3"></td>
+                            </tr>
+                            <!-- resume -->
+                            <tr>
+                                <td class="headings border-dark">Resume</td>
+                            </tr>
+                            <tr>
+                                <td class="border-dark">
+                                    <table width="100%">
+                                        <tr>
+                                            <td>
+                                                <h5>
+                                                    <%= mail_data.content.attachments %>
+                                                </h5>
+                                            </td>
+                                            <td>
+                                                <span> <button type="button" class="download-btn">
+                                                        <a style="color: #fff"
+                                                            href="<%= process.env.RESOURCE_URL %>upload/candidate/<%= mail_data.content.attachments %>">
+                                                            Download
+                                                        </a>
+                                                    </button></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- resume ends-->
+                            <% } %>
+
+                                <tr>
+                                    <td class="py-3"></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="greet">
+                                        <%- mail_data.footer_content %>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td height="12" style="background-color: #053f69"></td>
+                                </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+/* monster candidate detail / popup */
+#header-bar {
+    display: none;
+}
+
+.ant-card-body {
+    padding: 0;
+}
+
+.contact-wrapper {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+
+.viewed-history-table {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 10px;
+
+}
+
+.cell {
+    padding: 5px;
+}
+
+.cell-heading {
+    text-align: left;
+    font-weight: 600;
+}
+
+button[form="editDetails"][type="submit"] {
+    display: none;
+}

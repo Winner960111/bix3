@@ -1,0 +1,92 @@
+
+
+.candidate #kt_header {
+  left: 0;
+}
+.candidate #kt_subheader {
+  left: 0;
+}
+
+.visited {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    z-index: 6;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visited:after {content: '';border-top: 35px solid #277cc3;border-left: 35px solid transparent;width: 20px;height: 20px;position: absolute;top: 0;right: 0;z-index: -1;}
+
+.visited svg {fill: #fff;}
+
+.register_require {
+    position: relative;
+}
+
+.register_require::after {
+    content: '*';
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    color: red;
+    font-size: 20px;
+    /* left: 2px; */
+}
+.form-group.register_require .form-control {
+    background-image: none;
+}
+select.custom_select {
+    appearance: none;
+}
+
+div.search-btn {
+    background-color: #4a90e2;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+    width: 142px;
+    height: 40px;
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    text-align: center;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+}
+div.search-btn .btn {
+    color: #fff !important;
+}
+
+.ck-editor__editable {
+    min-height: 200px !important;
+}
+.candidate-navi .navi-link.active span {
+    color: #f97304 !important;
+}
+.candidate-navi .navi-link span {
+    color: #023d67 !important;
+}
+.custom-scroller::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.custom-scroller::-webkit-scrollbar-thumb {
+    background: #d3d3d3;
+}
+.custom-scroller::-webkit-scrollbar-track {
+    background: #e1e6f1;
+}
+.custom-scroller {
+    max-height: 1050px;
+    overflow: auto;
+}
