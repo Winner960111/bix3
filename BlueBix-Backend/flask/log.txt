@@ -1,0 +1,32 @@
+To candidate => Dear HaoMing Lin, Your profile aligns well with the Senior Full-stack Developer role in Texas. Are you interested in learning more about this opportunity? Thank you.
+To candidate => Hi Chenyi Hao, Your profile is a strong match for the Senior Full-Stack Developer position in Texas. Are you interested in learning more about this opportunity? Thank you.
+From candidate => Yes, I am interested in this position.
+To candidate => Job description: 
+I'm looking for a senior full-stack developer. Our office is in Texas. If you are fit for this position yourself, please contact me. Thanks.
+
+Please share how you believe your skill set aligns with the requirements and demands of our company.
+From candidate => Yes, I am interested in this position.
+To candidate => Job description:
+I'm looking for a senior full-stack developer. Our office is in Texas. If you are fit for this position yourself, please contact me. Thanks.
+
+Please share how you believe your skill set aligns with the requirements and demands of our company.
+From candidate => Yes, I am interested in this position.
+To candidate => To proceed with your application, could you please let us know your availability for an interview from the following slots (all times are in UTC): 
+Could you please indicate your preferred interview time slot on March 31, 2024 (UTC)? The options are:
+
+- 20:00 - 20:30
+- 20:30 - 21:00
+- 21:00 - 21:30
+From candidate => 20.00-20.30
+To candidate => The interview has been scheduled between you and the recruitment manager on March 31, 2024, from 20:00 to 20:30 UTC.
+From candidate => Yes, I am interested in this position.
+To candidate => To proceed with your application, could you please let us know your availability for an interview from the following slots (all times are in UTC): 
+Could you please inform us of your availability for an interview during the following time slots (UTC timezone)?
+
+1. 20:30 - 21:00
+2. 21:00 - 21:30
+3. 21:30 - 22:00
+
+On March 31, 2024.
+From candidate => 20.30
+To candidate => The interview has been scheduled between you and the recruitment manager on 31st March from 20:30 to 21:00 UTC.
