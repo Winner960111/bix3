@@ -31,11 +31,11 @@ calendar_tools = [
                 "properties": {
                     "start_datetime": {
                         "type": "string",
-                        "description": "Starting date and time of selected time slot.",
+                        "description": "Starting date and time of selected time slot. You should answer as following format:'% Y-%m-%dT % H: % M: % SZ'",
                     },
                     "end_datetime": {
                         "type": "string",
-                        "description": "Ending date and time of selected time slot.",
+                        "description": "Ending date and time of selected time slot.You should answer as following format:'% Y-%m-%dT % H: % M: % SZ'",
                     },
                 },
                 "required": ["start_datetime", "end_datetime"],
@@ -323,13 +323,11 @@ async def calendar_book(bot_msg, candidate_msg, email):
     messages.append(
         {"role": "user", "content": f"{bot_msg}\nUser's response: {candidate_msg}"})
 
-    print(f"this is bot's message {bot_msg}")
     response = openai_client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
         messages=messages,
     )
     set_time = response.choices[0].message.content
-    print(f"this is the preserve time===========>{set_time}")
 
     messages = []
     messages.append(
@@ -343,15 +341,9 @@ async def calendar_book(bot_msg, candidate_msg, email):
     )
 
     try:
-        print(f"response is got like this =>{response}")
         function_time = response.choices[0].message.tool_calls[0].function.arguments
         start_time = function_time.split("\"")[3]
         end_time = function_time.split("\"")[7]
-        if start_time[-1] != 'Z':
-            start_time+='Z'
-        if end_time[-1] != 'Z':
-            end_time += 'Z'
-        print(f"save time format => {start_time}")
         # Connect to the database
         conn = sqlite3.connect('mydb.sqlite')
         cur = conn.cursor()
@@ -368,7 +360,6 @@ async def calendar_book(bot_msg, candidate_msg, email):
         else:
             print("Error")
         interviewTime = f"{start_time} + {end_time}"
-        print(f"interviewTime is => {interviewTime}")
         return interviewTime
     except:
         return "None"

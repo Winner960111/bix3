@@ -5,7 +5,6 @@ from flask_cors import CORS
 import os
 import sqlite3
 import pickle
-
 from openai import OpenAI
 
 from googleapiclient.discovery import build
@@ -18,7 +17,6 @@ from email.mime.text import MIMEText
 from mimetypes import guess_type as guess_mime_type
 import time
 import json
-
 import re
 # from twilio.rest import Client
 from dotenv import load_dotenv
@@ -73,8 +71,7 @@ async def send_email(destination, body):
         print(f"Email sent; Message ID: {send_response['id']}")
     except Exception as e:
         print(f"An error occurred while sending an email===>{e}")
-        send_email(destination, body)
-        
+
     filename = 'log.txt'
 
     # Open the file in append mode
@@ -85,7 +82,6 @@ async def send_email(destination, body):
 async def email_mark_as_read(id):
     service.users().messages().batchModify(userId='me', body={
         'ids': [id], 'removeLabelIds': ['UNREAD']}).execute()
-    print(f"It's done===>{id}")
 
 async def clean_msg(message):
     pattern = re.compile(
@@ -129,74 +125,60 @@ async def read_simple_email():
             cursor.close()
             conn.close()
 
-            print(f"On {from_email} current step is =>{step}")
             if step != 10:
                 for message in email_messages:
                     msg = service.users().messages().get(
                         userId='me', id=message['id']).execute()
 
                     if 'UNREAD' in msg['labelIds']:
-                        filename = 'log.txt'
+                        # filename = 'log.txt'
 
-                        # Open the file in append mode
-                        with open(filename, 'a') as file:
-                            # Append the new content to the file
-                            file.write(
-                                f"From candidate => {await clean_msg(msg['snippet'])}\n")
+                        # # Open the file in append mode
+                        # with open(filename, 'a') as file:
+                        #     # Append the new content to the file
+                        #     file.write(
+                        #         f"From candidate => {await clean_msg(msg['snippet'])}\n")
 
                         if step == 1:
                             res = await init_answer(from_email, await clean_msg(msg['snippet']))
-                            print(res)
                             if (res == 'Yes'):
                                 await set_step(from_email, 2)
                                 res = await show_JD(from_email)
-                                print(res)
                                 await send_email(from_email, res)
                             elif (res == 'No'):
                                 res = await reason_message()
-                                print(res)
                                 await send_email(from_email, res)
                                 await set_step(from_email, 0)
                             else:
                                 res = await init_message(from_email, True)
-                                print(res)
                                 await send_email(from_email, res)
                         elif step == 0:
                             res = (await clean_msg(msg['snippet']))
-                            print(res)
                             await send_email(from_email, end_message())
                             await set_step(from_email, 10)
                         elif step == 2:
                             res = await show_JD_answer(from_email, await clean_msg(msg['snippet']))
-                            print(res)
                             if res == "Yes":
                                 await set_step(from_email, 3)
                                 timeslot[from_email] = await calendar_show()
-                                print(timeslot[from_email])
                                 await send_email(from_email, timeslot[from_email])
                             elif res == "No":
                                 call_res = await end_message()
-                                print(call_res)
                                 await send_email(from_email, call_res)
                             else:
                                 call_res = await show_JD(from_email)
-                                print(call_res)
                                 await send_email(from_email, call_res)
-                            res = await JD_recruiter_answer(
-                                from_email, await clean_msg(msg['snippet']))
-                            print(res)
+                            # res = await JD_recruiter_answer(
+                            #     from_email, await clean_msg(msg['snippet']))
                         elif step == 3:
                             res = await calendar_book(timeslot[from_email], await clean_msg(
                                 msg['snippet']), from_email)
-                            print(res)
                             if res == "None":
                                 timeslot[from_email] = await calendar_show()
-                                print(timeslot[from_email])
                                 await send_email(from_email, timeslot[from_email])
                             else:
                                 call_res = await reserve_message(from_email, res)
                                 await set_step(from_email, 10)
-                                print(call_res)
                                 await send_email(from_email, call_res)
                     
                         await email_mark_as_read(message['id'])
@@ -230,7 +212,6 @@ async def read_md_email():
             cursor.close()
             conn.close()
 
-            print(f"On {from_email} current step is =>{step}")
             for message in email_messages:
                 msg = service.users().messages().get(
                     userId='me', id=message['id']).execute()
@@ -246,117 +227,92 @@ async def read_md_email():
 
                     if step == 1:
                         res = await init_answer(from_email, await clean_msg(msg['snippet']))
-                        print(res)
                         if (res == 'Yes'):
                             await set_step(from_email, 2)
                             res = await JD_recruiter(from_email, False)
-                            print(res)
                             await send_email(from_email, res)
                         elif (res == 'No'):
                             res = await reason_message()
-                            print(res)
                             await send_email(from_email, res)
                             await set_step(from_email, 0)
                         else:
                             res = await init_message(from_email, True)
-                            print(res)
                             await send_email(from_email, res)
                     elif step == 0:
                         res = (await clean_msg(msg['snippet']))
-                        print(res)
                         await send_email(from_email, end_message())
                         await set_step(from_email, 10)
                     elif step == 2:
                         res = JD_recruiter_answer(
                             from_email, await clean_msg(msg['snippet']))
-                        print(res)
                         if (res == 'Go'):
                             await set_step(from_email, 3)
                             states[from_email] = 'Go'
                             res_job = show_JD(from_email)
-                            print(res_job)
                             await send_email(from_email, res_job)
                         elif (res == 'Interview'):
                             await set_step(from_email, 3)
                             states[from_email] = "Interview"
                             timeslot[from_email] = await calendar_show()
-                            print(timeslot[from_email])
                             await send_email(from_email, timeslot[from_email])
                         else:
                             res = JD_recruiter(from_email, True)
-                            print(res)
                             await send_email(from_email, res)
                     elif step == 3:
                         if states[from_email] == "Go":
                             res = show_JD_answer(
                                 from_email, await clean_msg(msg['snippet']))
-                            print(res)
                             if res == "Yes":
                                 await set_step(from_email, 4)
                                 call_res = open_job(from_email)
-                                print(call_res)
                                 await send_email(from_email, call_res)
                             elif res == "No":
                                 call_res = end_message()
-                                print(call_res)
                                 await send_email(from_email, call_res)
                             else:
                                 call_res = show_JD(from_email)
-                                print(call_res)
                                 await send_email(from_email, call_res)
                         else:
                             res = await calendar_book(timeslot[from_email], await clean_msg(
                                 msg['snippet']), from_email)
-                            print(res)
                             if res == "None":
                                 timeslot[from_email] = await calendar_show()
-                                print(timeslot[from_email])
                                 await send_email(from_email, timeslot[from_email])
                             else:
                                 call_res = await reserve_message(from_email, res)
                                 await set_step(from_email, 10)
-                                print(call_res)
                                 await send_email(from_email, call_res)
                     elif step == 4:
                         res = open_job_answer(
                             from_email, await clean_msg(msg['snippet']))
-                        print(res)
                         if res == "Yes":
                             await set_step(from_email, 5)
                             call_res = commute_job(from_email)
-                            print(call_res)
                             await send_email(from_email, call_res)
                         else:
                             call_res = end_message()
-                            print(call_res)
                             await send_email(from_email, call_res)
                             await set_step(from_email, 10)
                     elif step == 5:
                         res = commute_job_answer(
                             from_email, await clean_msg(msg['snippet']))
-                        print(res)
                         if res == "Yes":
                             await set_step(from_email, 6)
                             timeslot[from_email] = await calendar_show()
-                            print(timeslot[from_email])
                             await send_email(from_email, timeslot[from_email])
                         else:
                             call_res = commute_job(from_email)
-                            print(call_res)
                             await send_email(from_email, call_res)
                     elif step == 6:
                         res = await calendar_book(timeslot[from_email], await clean_msg(
                             msg['snippet']), from_email)
-                        print(res)
                         if res != "None":
                             call_res = await reserve_message(
                                 from_email, await clean_msg(msg['snippet']))
-                            print(call_res)
                             await send_email(from_email, call_res)
                             await set_step(from_email, 10)
                         else:
                             timeslot[from_email] = await calendar_show()
-                            print(timeslot[from_email])
                             await send_email(from_email, timeslot[from_email])
 
                     email_mark_as_read(message['id'])
@@ -390,7 +346,6 @@ async def read_email():
             cursor.close()
             conn.close()
 
-            print(f"On {from_email} current step is =>{step}")
             for message in email_messages:
                 msg = service.users().messages().get(
                     userId='me', id=message['id']).execute()
@@ -405,140 +360,107 @@ async def read_email():
 
                     if step == 1:
                         res = await init_answer(from_email, await clean_msg(msg['snippet']))
-                        print(res)
                         if (res == 'Yes'):
                             await set_step(from_email, 2)
                             res = await JD_recruiter(from_email, False)
-                            print(res)
                             await send_email(from_email, res)
                         elif (res == 'No'):
                             res = await reason_message()
-                            print(res)
                             await send_email(from_email, res)
                             await set_step(from_email, 0)
                         else:
                             res = await init_message(from_email, True)
-                            print(res)
                             await send_email(from_email, res)
                     elif step == 0:
                         res = (await clean_msg(msg['snippet']))
-                        print(res)
                         await send_email(from_email, end_message())
                         await set_step(from_email, 10)
                     elif step == 2:
                         res = JD_recruiter_answer(from_email, await clean_msg(msg['snippet']))
-                        print(res)
                         if (res == 'Go'):
                             await set_step(from_email, 3)
                             states[from_email] = 'Go'
                             res_job = show_JD(from_email)
-                            print(res_job)
                             await send_email(from_email, res_job)
                         elif (res == 'Interview'):
                             await set_step(from_email, 3)
                             states[from_email] = "Interview"
                             timeslot[from_email] = await calendar_show()
-                            print(timeslot[from_email])
                             await send_email(from_email, timeslot[from_email])
                         else:
                             res = JD_recruiter(from_email, True)
-                            print(res)
                             await send_email(from_email, res)
                     elif step == 3:
                         if states[from_email] == "Go":
                             res = show_JD_answer(
                                 from_email, await clean_msg(msg['snippet']))
-                            print(res)
                             if res == "Yes":
                                 await set_step(from_email, 4)
                                 call_res = confirm_screening(
                                     from_email)
-                                print(call_res)
                                 await send_email(from_email, call_res)
                             elif res == "No":
                                 call_res = end_message()
-                                print(call_res)
                                 await send_email(from_email, call_res)
                             else:
                                 call_res = show_JD(from_email)
-                                print(call_res)
                                 await send_email(from_email, call_res)
                         else:
                             res = await calendar_book(timeslot[from_email], await clean_msg(msg['snippet']), from_email)
-                            print(res)
                             if res == "None":
                                 timeslot[from_email] = await calendar_show()
-                                print(timeslot[from_email])
                                 await send_email(from_email, timeslot[from_email])
                             else:
                                 call_res = await reserve_message(from_email, res)
                                 await set_step(from_email, 10)
-                                print(call_res)
                                 await send_email(from_email, call_res)
                     elif step == 4:
                         res = confirm_screening_answer(
                             from_email, await clean_msg(msg['snippet']))
-                        print(res)
                         if res == "Yes":
                             await set_step(from_email, 5)
                             call_res = screening_question(from_email)
-                            print(call_res)
                             await send_email(from_email, call_res)
                         else:
                             call_res = other_skill_end()
-                            print(call_res)
                             await send_email(from_email, call_res)
                             await set_step(from_email, 10)
                     elif step == 5:
                         res = screening_question_answer(from_email, await clean_msg(msg['snippet']))
-                        print(res)
                         if res == "Yes":
                             await set_step(from_email, 6)
                             call_res = question_motivate(from_email)
-                            print(call_res)
                             await send_email(from_email, call_res)
                         elif res == "No":
                             call_res = screening_question(from_email)
-                            print(call_res)
                             await send_email(from_email, call_res)
                     elif step == 6:
-                        print(await clean_msg(msg['snippet']))
                         await set_step(from_email, 7)
                         res = await question_salary(from_email)
-                        print(res)
                         await send_email(from_email, res)
                     elif step == 7:
-                        print(await clean_msg(msg['snippet']))
                         await set_step(from_email, 8)
                         res = await more_question(from_email)
-                        print(res)
                         await send_email(from_email, res)
                     elif step == 8:
-                        print(await clean_msg(msg['snippet']))
                         await set_step(from_email, 9)
                         timeslot[from_email] = await calendar_show()
-                        print(timeslot[from_email])
                         await send_email(from_email, timeslot[from_email])
                     elif step == 9:
                         res = await calendar_book(timeslot[from_email], await clean_msg(msg['snippet']), from_email)
-                        print(res)
                         if res != "None":
                             call_res = await reserve_message(
                                 from_email, await clean_msg(msg['snippet']))
-                            print(call_res)
                             await send_email(from_email, call_res)
                             await set_step(from_email, 10)
                         else:
                             timeslot[from_email] = await calendar_show()
-                            print(timeslot[from_email])
                             await send_email(from_email, timeslot[from_email])
 
                     await email_mark_as_read(message['id'])
     except Exception as e:
-        print(e)
-
+            print(e)
 async def mark_as_read_all(email):
-        print(f"\nI am all of mark read position====>{email}")
         results = service.users().messages().list(
             userId='me', q=f"from:{email}").execute()
         email_messages = results.get('messages', [])
@@ -549,7 +471,6 @@ async def mark_as_read_all(email):
             if 'UNREAD' in msg['labelIds']:
                await email_mark_as_read(message['id'])
         
-
 async def clean_DB():
     # Connect to the database
     conn = sqlite3.connect('mydb.sqlite')
@@ -604,13 +525,10 @@ async def screen_start():
         if request.method == 'POST':
             await clean_DB()
             res = request.json
-            print(res)
             job_id = res['jobInfo']['opening_title']
             level = res['level']
             job_description = res['jobInfo']['job_description']
             
-            print(f"job description =====>{job_description}")
-
             for candidate in res['candidates']:
                 email = candidate['email']
                 number = candidate['mobile']
@@ -652,6 +570,21 @@ async def screen_start():
                 else:
                     await read_simple_email()
                 time.sleep(20)
+                with sqlite3.connect('mydb.sqlite') as conn:
+                    cursor = conn.cursor()
+                    cursor.execute("SELECT email FROM resume")
+                    email_items = [row[0] for row in cursor.fetchall()]
+                    number = 0
+                    for from_email in email_items:
+                        cursor.execute(
+                            "SELECT step FROM resume WHERE email = ?", (from_email,))
+                        step = cursor.fetchone()[0]
+                        if step == 10:
+                            number +=1
+                    if number == len(email_items):
+                        break
+                cursor.close()
+                conn.close()
 
         return "Good"
     except Exception as e:
