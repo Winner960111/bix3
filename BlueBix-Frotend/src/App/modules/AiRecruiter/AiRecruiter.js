@@ -14,27 +14,36 @@ const AiRecruiter = () => {
   const [person, setPerson] = useState([]);
   const [levelStatus, setLevelStatus] = useState("simple");
 
-
   const getRecruitersHandler = () => {
     
     getRecruiters()
       .then(res => {
         setJobs(res.data.data.jobOpenings);
         setPerson(res.data.data.candidates);
+        setDisplayJobs(res.data.data.jobOpenings);
+        setDisplayCandidates(res.data.data.candidates);
     })
   }
   useEffect(() => {
     getRecruitersHandler()
   }, []);
 
-  useEffect(() => {
-    setDisplayJobs(
-      jobs.filter((item) =>
-        item.opening_title.toLowerCase().includes(title.toLowerCase())
-      )
-    );
-  }, [title, jobs]);
-
+  // useEffect(() => {
+  //   setDisplayJobs(
+  //     jobs.filter((item) =>
+  //       item.opening_title.toLowerCase().includes(title.toLowerCase())
+  //     )
+  //   );
+  // }, [title, jobs]);
+ 
+  // useEffect(() => {
+  //   setDisplayCandidates(
+  //     candidate.filter((item) =>
+  //       item.first_name.toLowerCase().includes(name.toLowerCase())
+  //     )
+  //   );
+  // }, [name, candidate]);
+  
   useEffect(() => {
     let tempperson = [];
     person.map(
@@ -43,18 +52,24 @@ const AiRecruiter = () => {
     setCandidates(tempperson);
   }, [person]);
 
-  useEffect(() => {
-    setDisplayCandidates(
-      candidate.filter((item) =>
-        item.first_name.toLowerCase().includes(name.toLowerCase())
-      )
-    );
-  }, [name, candidate]);
-  // useEffect(() => { 
-  //   console.log('useEffect==>')
-  // },[])
 
+   const searchJob = () => {
+     setDisplayJobs(
+       jobs.filter((item) =>
+         item.opening_title.toLowerCase().includes(title.toLowerCase())
+       )
+     );
+  };
+  
+  const searchCandidate = () => {
+  setDisplayCandidates(
+    candidate.filter((item) =>
+      item.first_name.toLowerCase().includes(name.toLowerCase())
+    )
+  );
+  }
   const handleSubmit = async () => {
+    setStart(false)
     const sendData = {
       jobInfo: selectJob,
       candidates: candidate.filter((item) => item.checked === true),
@@ -103,7 +118,9 @@ const AiRecruiter = () => {
               placeholder="Search Job"
               onChange={(e) => setTitle(e.target.value)}
             />
-            <button className="button">Search</button>
+            <button className="button" onClick={searchJob}>
+              Search
+            </button>
           </div>
           <div className="main_job_display">
             {displayJobs.length !== 0
@@ -125,7 +142,9 @@ const AiRecruiter = () => {
               placeholder="Search candidates"
               onChange={(e) => setName(e.target.value)}
             />
-            <button className="can_button">Search</button>
+            <button className="can_button" onClick={searchCandidate}>
+              Search
+            </button>
           </div>
           <div className="main_candidate_display">
             {displayCandidate.map((item, index) => (
