@@ -14,10 +14,17 @@ const AiRecruiter = () => {
   const [person, setPerson] = useState([]);
   const [levelStatus, setLevelStatus] = useState("simple");
 
-  useEffect(async () => {
-    const res = await getRecruiters();
-    setJobs(res.data.data.jobOpenings);
-    setPerson(res.data.data.candidates);
+
+  const getRecruitersHandler = () => {
+    
+    getRecruiters()
+      .then(res => {
+        setJobs(res.data.data.jobOpenings);
+        setPerson(res.data.data.candidates);
+    })
+  }
+  useEffect(() => {
+    getRecruitersHandler()
   }, []);
 
   useEffect(() => {
@@ -43,6 +50,9 @@ const AiRecruiter = () => {
       )
     );
   }, [name, candidate]);
+  // useEffect(() => { 
+  //   console.log('useEffect==>')
+  // },[])
 
   const handleSubmit = async () => {
     const sendData = {
@@ -151,3 +161,15 @@ const AiRecruiter = () => {
   );
 };
 export default AiRecruiter;
+
+// import React from 'react';
+
+
+// export default () => {
+
+//   return (
+//     <div>
+//       <h1>Recruiter Page</h1>
+//     </div>
+//   )
+// }

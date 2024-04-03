@@ -1,11 +1,5 @@
-To candidate => Your profile as a Python developer strongly aligns with the role. Interested in learning more about our position in developing Python applications using PySpark at our office?
-To candidate => Job description:
-Develop Python applications with a strong emphasis on PySpark for distributed data processing. Collaborate with cross-functional teams to understand project requirements and contribute to the design of scalable and reliable solutions. Utilize cloud platforms such as AWS, Azure, or GCP to develop and deploy cloud-based applications. Implement and optimize data processing pipelines using PySpark for seamless integration and analysis. Work on the full software development life cycle, from design and coding to testing and deployment. Collaborate with other developers to troubleshoot and resolve software defects and issues. Stay updated on industry trends and advancements in Python development, PySpark, and cloud technologies. Contribute to the improvement of development processes and best practices.
+To candidate => Hi HaoMing Lin, Your profile is a strong match for the Senior Full-Stack Developer role in our Texas office. Are you interested in learning more about this opportunity? Thanks.
+To candidate => Job description: 
+I'm looking for a senior full-stack developer.Our office is in Texas. If you are fit for this position yourself, please contact me. Thanks.
 
 Please share how you believe your skill set aligns with the requirements and demands of our company.
-To candidate => Could you kindly choose a preferred interview time slot from the list below? All times are in UTC.
-
-1. 18:00 - 18:30
-2. 18:30 - 19:00
-3. 19:00 - 19:30
-To candidate => Certainly! The interview has been scheduled between the candidate and recruitment manager from 18:00 to 18:30 on April 1, 2023.

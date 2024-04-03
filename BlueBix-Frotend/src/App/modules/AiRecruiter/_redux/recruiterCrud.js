@@ -10,9 +10,10 @@ const header = {
   },
 };
 
-export function getRecruiters() {
-  return axios
+export const getRecruiters = () => 
+  new Promise((resolve, reject) => {
+    axios
     .post(GET_RECRUITERS_URL, { title: "", name: "" }, header)
-    .then((res) => res)
+    .then((res) => resolve(res))
     .catch((err) => Error(err));
-}
+  })
