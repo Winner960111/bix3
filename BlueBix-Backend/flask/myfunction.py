@@ -312,14 +312,14 @@ async def calendar_show():
     )
 
     # Build the response with available slots
-    res = f"To proceed with your application, could you please let us know your availability for an interview from the following slots (all times are in UTC): \n{response.choices[0].message.content}"
+    res = response.choices[0].message.content
     return res
 
 async def calendar_book(bot_msg, candidate_msg, email):
     global utc_now
     messages = []
     messages.append(
-        {"role": "system", "content": f"Please answer which time slot is selected by user with {utc_now}. You should only answer asutc_nownd time. And you should answer with period of timeslot exactly. {bot_msg} include the {utc_now}."})
+        {"role": "system", "content": f"Please answer which time slot is selected by user with {utc_now}. You should only answer as {utc_now} time. And you should answer with period of timeslot exactly. {bot_msg} include the {utc_now}."})
     messages.append(
         {"role": "user", "content": f"{bot_msg}\nUser's response: {candidate_msg}"})
 

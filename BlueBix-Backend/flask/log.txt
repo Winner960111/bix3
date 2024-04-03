@@ -1,50 +1,11 @@
-To candidate => Hello HaoMing Lin, I came across your profile and believe you would be a strong match for the Senior Full-Stack Developer role at our Texas office. Are you interested in learning more?
-To candidate => Dear Chenyi Hao, your profile as a senior full-stack developer is a strong match for our office in Texas. Are you interested in learning more about this opportunity? Thank you.
+To candidate => Your profile as a Python developer strongly aligns with the role. Interested in learning more about our position in developing Python applications using PySpark at our office?
 To candidate => Job description:
-I'm looking for a senior full-stack developer. Our office is in Texas. If you are fit for this position yourself, please contact me. Thanks.
+Develop Python applications with a strong emphasis on PySpark for distributed data processing. Collaborate with cross-functional teams to understand project requirements and contribute to the design of scalable and reliable solutions. Utilize cloud platforms such as AWS, Azure, or GCP to develop and deploy cloud-based applications. Implement and optimize data processing pipelines using PySpark for seamless integration and analysis. Work on the full software development life cycle, from design and coding to testing and deployment. Collaborate with other developers to troubleshoot and resolve software defects and issues. Stay updated on industry trends and advancements in Python development, PySpark, and cloud technologies. Contribute to the improvement of development processes and best practices.
 
 Please share how you believe your skill set aligns with the requirements and demands of our company.
-To candidate => To proceed with your application, could you please let us know your availability for an interview from the following slots (all times are in UTC): 
-Could you please confirm your availability for an interview at one of the following timeslots (UTC)?
+To candidate => Could you kindly choose a preferred interview time slot from the list below? All times are in UTC.
 
-- April 2, 2024, 19:00 - 19:30
-- April 2, 2024, 19:30 - 20:00
-- April 2, 2024, 20:00 - 20:30
-To candidate => Job description:
-I'm looking for a senior full-stack developer. Our office is in Texas. If you are fit for this position yourself, please contact me. Thanks.
-
-Please share how you believe your skill set aligns with the requirements and demands of our company.
-To candidate => Yes, interviews can be scheduled between 7:00 PM to 7:30 PM on April 2, 2024.
-To candidate => To proceed with your application, could you please let us know your availability for an interview from the following slots (all times are in UTC): 
-Could you please confirm your availability for an interview? Here are the possible time slots (UTC):
-
-- April 2, 2024, 19:30 - 20:00
-- April 2, 2024, 20:00 - 20:30
-- April 2, 2024, 20:30 - 21:00
-
-Thank you!
-To candidate => Sure, I have scheduled an interview between you and the recruitment manager on April 2nd, 2024, between 7:30 PM to 8:00 PM.
-To candidate => HaoMing Lin, your profile is a strong match for the Senior Full-stack Developer role in Texas. Are you interested in learning more about this opportunity?
-To candidate => Dear Chenyi Hao, I came across your profile and believe you would be a strong match for the Senior full-stack developer role at our office in Texas. Are you interested in learning more? Thank you.
-To candidate => Job description:
-I'm looking for a senior full-stack developer. Our office is in Texas. If you are fit for this position yourself, please contact me. Thanks.
-
-Please share how you believe your skill set aligns with the requirements and demands of our company.
-To candidate => Job description:
-I'm looking for a senior full-stack developer. Our office is in Texas. If you are fit for this position yourself, please contact me. Thanks.
-
-Please share how you believe your skill set aligns with the requirements and demands of our company.
-To candidate => To proceed with your application, could you please let us know your availability for an interview from the following slots (all times are in UTC): 
-Could you please indicate your availability at the following times on April 2, 2024 (UTC)?
-
-1. 19:00 - 19:30
-2. 19:30 - 20:00
-3. 20:00 - 20:30
-To candidate => Certainly! An interview has been scheduled between you and the recruitment manager on April 2, 2024, from 19:00 to 19:30 UTC.
-To candidate => To proceed with your application, could you please let us know your availability for an interview from the following slots (all times are in UTC): 
-Could you please confirm your availability for an interview at one of the following times (UTC)? 
-
-- April 2, 2024, 19:30 - 20:00
-- April 2, 2024, 20:00 - 20:30
-- April 2, 2024, 20:30 - 21:00
-To candidate => Certainly! The interview has been scheduled between you and the recruitment manager on April 2, 2024, from 19:30 to 20:00 UTC.
+1. 18:00 - 18:30
+2. 18:30 - 19:00
+3. 19:00 - 19:30
+To candidate => Certainly! The interview has been scheduled between the candidate and recruitment manager from 18:00 to 18:30 on April 1, 2023.
